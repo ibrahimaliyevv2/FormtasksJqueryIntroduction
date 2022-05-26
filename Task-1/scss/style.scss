@@ -1,12 +1,13 @@
 *{
-    margin: 0;
     padding: 0;
+    margin:0;
     box-sizing: border-box;
 }
 
 #header{
     .container{
-        padding: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         .row{
             .col-4{
                 a{
@@ -17,89 +18,29 @@
                     }
                 }
             }
+
             .col-8{
                 display: flex;
                 .row{
-
-                    .navbar-list{
+                    ul{
                         text-decoration: none;
                         display: flex;
-                        align-items: center;
+                        justify-content: space-between !important;
                         margin: 0px !important;
-
-                        #selected{
-                            .dropdown{
-                                position: relative;
-                                display: inline-block;
-                                .dropdown-content{
-                                    display: none;
-                                    position: absolute;
-                                    right: 0px;
-                                    background-color: #ffffff;
-                                    width: 160px;
-                                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                                    z-index: 1;
-                                    display: none;
-                                    padding-top: 10px;
-                                    margin-top: 30px;
-                                    text-align: center;
-                                    
-                                
-                                    
-
-
-                                    a{
-                                        color: black;
-                                        padding: 5px 2px;
-                                        text-decoration: none;
-                                        display: block;
-                        
-                                        &:hover{
-                                            background-color: #ddd;
-                                            display: block;
-                                        }
-
-                                        &::after{
-                                            content: "";
-                                            width: 0%;
-                                            height: 1px;
-                                            position: absolute;
-                                            background-color: black;
-                                            bottom: -10px;
-                                            left: 0;
-                                            transition: all 0.5s;
-                                        }
-                                    }
-
-                                .dropdown-content:hover a{
-                                    opacity:1;
-                                }
-                            }
-                        }
-                        
-                        #selected:hover{
-                            .dropdown-content {display: inline-block;}
-                        }
-
-                        li{ 
+                        .item-menu{
                             margin-left: 60px;
                             list-style: none;
                             font-size: 20px;
                             position: relative;
-                           a{
-                                color: rgb(73, 73, 73) !important;
-                           }
-                            
-
-                            .menu-text{
+                            a{
                                 text-decoration: none;
                                 position: relative;
                                 display: flex;
-                                color: black;
+                                color: black !important;
                                 display: inline-block;
-  
                             }
-                            .menu-text::after{
+
+                            a::after{
                                 content: "";
                                 width: 0%;
                                 height: 1px;
@@ -110,154 +51,77 @@
                                 transition: all 0.5s;
                               
                             }
-                            .menu-text:hover:after{
+                            a:hover:after{
                                 width: 100%;
                             }
-                            .menu-text:hover .subbar-list-item{
-                                opacity:1;
+
+                            &:hover >#home-menu{
+                                visibility: visible;
+                                height: 200px;
+                                transition: 1s;
+                                opacity: 1;
                             }
-                            
-                            
-                            .subbar-list{
+                        }
+
+                        //nav-barda home altinda subbarlar acilsin xeta var
+                        #home{
+                            #home-menu{
                                 position: absolute;
-                                background-color:#f34f3f;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: start;
-                                top: 42px;
-                                z-index: 100;
-                                left: -9px;
-                                opacity: 0;
-                                .subbar-area{
-                                    .subbar-list-item{
-                                        padding: 10px 80px 10px 7px;
-                                        padding: 12px;
-                                        a{
-                                            text-decoration: none;
-                                            color: black;
-                                            font-size: 15px;
-                                            padding: 12px 16px;
-                                        }
+                                left: -40px;
+                                top: 70px;
+                                width: 150px;
+                                visibility: hidden;
+                                height: 0px;
+                                opacity: 0%;
+                                overflow: hidden;
+                                transition: 1s;
+                                z-index: 20;
+                                background-color: white;
+                                text-align: justify;
+                               .menu-home{
+                                li{
+                                    list-style: none;
+                                    position: relative;
+                                    left: -15px;
+                                    a{
+                                        text-decoration: none;
+                                        color: rgb(128, 125, 125);
+                                        position: relative;
+                                    }
+                                    a::after{
+                                        content: "";
+                                        width: 0%;
+                                        height: 1px;
+                                        background-color: gray;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        transition: 0.6s;
+                                    }
+                                    a:hover:after{
+                                        width: 100%;
+                                    }
+                                    i{
+                                        margin-right: 30px;
                                     }
                                 }
-                                
-                            }
-
-                        }
-                        .icon-list{
-                            margin-left: 60px;
-                        }
-                        a{
-                            margin: 0 !important;
-                            li{
-                                margin-left: 26px;
-                                
+                               }
+                              
                             }
                         }
-
-                        .icon{
-                            text-decoration: none;
-                            color:black;
-                            margin: 10px;
-                            font-size: 16px;
-                            transition: 0.5s;
-                            li{
-                                list-style: none;
-
-                            }
-                        }
-                        .icon-search:hover{
-                            color: #f34f3f;
-                        }
-                        .icon-shop{
-                            position: relative;
-                            .text-upper{
-                                span{
-                                    font-size: 12px;
-                                }
-                                text-align: center;
-                                width: 15px;
-                                height: 15px;
-                                position: absolute;
-                                right: -3px;
-                                top: -1px;
-                                border: 1px solid #f34f3f;
-                                background-color: #f34f3f;
-                                border-radius: 50%;
-                                color: white;
-                            }
-                        }
-                       
-                      
-
-                    }
-                    .nav-icons{
-                        width: 250px;
                     }
                 }
             }
         }
     }
 }
-}
 
 
 
-
-
-// .img-logo{
-//     width: 200px;
-// }
-
-// .container{
-//     padding-top: 40px;
-//     .row{
-//         display: flex !important;
-//         justify-content: space-between !important;
-//     }
-// }
-
-// .col-7{
-//      ul{
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-
-//     .list-item-drop{
-//         list-style: none;
-//         a{
-//             text-decoration: none;
-//             color:black;
-//         }
-//     }
-// }
-// }
-// .nav-item{
-
-//     .nav-link{
-//         text-decoration: none;
-//         color: black;
-//     }
-//     .dropdown{
-//         width: 5px;
-//         height: 50px;
-//         display: flex;
-//         flex-direction: column;
-//         li{
-
-//             a{
-//                 text-decoration: none;
-//                 color: black;
-//                 display: block !important;
-//             }
-//         }
-//     }
-// }
 
 #filter-flowers{
     ul{
         display: flex;
-        // justify-content: space-between;
         li{
             list-style: none;
             margin: 20px;
@@ -287,7 +151,8 @@
                     }
                 }
                 .prise{
-                    span{
+                    span
+                    {
                         opacity: 0;
                     }
                 }
@@ -298,6 +163,7 @@
             img{
                 width: 80%;
                 height: 300px;
+                margin: 0 auto;
             }
         }
         .card-body{
